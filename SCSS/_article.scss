@@ -1,0 +1,68 @@
+/*este trecho de estilo se refere ao "article ou cuidados com os animais durante a quarentena" do nosso blog*/
+
+
+.article {
+    font-family: Arial, Helvetica, sans-serif;
+    @extend %no-margin-top, %auto-margin-left, %auto-margin-right, %quadruple-margin-bottom;
+    width: 80%;
+    &__title {
+        background-color: $light-grey;
+        padding: 20px;
+        text-align: center;
+    }
+    &__h1 {
+        color: $dark-grey;
+        @include fontSize(22px);
+        letter-spacing: 1px;
+        @extend %default-margin-bottom, %no-margin-left, %no-margin-right, %half-margin-top;
+    }
+    .breadcrumb {
+        @include flx(justify-content, center);
+        align-items: center;
+        &__link {
+            @extend %no-decoration;
+            color: $dark-grey;
+            @include fontSize(12px);
+            &:hover {
+                @extend %u-decoration;
+                color: $purple;
+            }
+        }
+        &__img {
+            @extend %default-margin-bottom, %default-margin-top, %default-margin-right, %default-margin-left;
+            width: 10px;
+        }
+    }
+    &__img {
+        @extend %double-margin-bottom;
+        width: 100%;
+    }
+    &__details {
+        @include flx(justify-content, center);
+        align-items: center;
+    }
+    &__date {
+        @include fontSize(12px);
+        font-style: italic;
+        @extend %no-margin-bottom, %no-margin-top, %default-margin-right, %default-margin-left;
+    }
+    &__tag {
+        border: 1px solid $purple;
+        color: $purple;
+        @include fontSize(14px);
+        @extend %no-margin-bottom, %no-margin-top, %default-margin-right, %default-margin-left;
+        padding: 5px 7px;
+    }
+    &__content {
+        color: $dark-grey;
+        @include fontSize(14px);
+        font-weight: 100;
+        padding: 10px 20px;
+        text-align: justify;
+        @include for-phone-only {
+            
+            @include fontSize(14px);
+            padding: 10px 0;
+        }
+    }
+}

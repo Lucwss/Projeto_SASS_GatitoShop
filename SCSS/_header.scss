@@ -1,0 +1,72 @@
+/*este trecho de estilo se refere ao cabeçalho do nosso blog*/
+
+
+.header {
+    font-family: arial, Helvetica, sans-serif;
+
+    &__logo {
+        text-align: center;
+    }
+
+    &__img {
+        max-width: 350px;
+    }
+
+    .menu {
+
+        &__list {
+            border-bottom: 1px solid $light-grey;
+            border-top: 1px solid $light-grey;
+            display: flex;
+            justify-content: center;
+            @extend %no-margin-top, %no-margin-bottom, %auto-margin-left, %auto-margin-right;
+            padding: 20px 0;
+            width: 80%;
+            @include for-phone-only {
+                width: 90%;
+                padding: 15px 0;
+                flex-wrap: wrap;
+            }
+
+            @include for-tablet-only {
+                width: 80%;
+                padding: 20px 0;
+            }
+
+            @include for-desktop-only {
+                width: 80%;
+                padding: 20px 0;
+            }
+        }
+
+        &__links {
+            position: relative;
+
+            @include for-phone-only {
+                padding: 5px 0;
+            }
+        }
+
+        &__links:not(:last-child)::after {
+            content: '';
+            background-color: $light-grey;
+            bottom: 0;
+            height: 15px;
+            @extend %auto-margin-top, %auto-margin-bottom, %auto-margin-left, %auto-margin-right;
+            position: absolute;
+            right: -3px;
+            top: 0;
+            width: 1px;
+        }
+
+        &__link {
+            color: $dark-grey;
+            padding: 0 25px;
+            text-decoration: none;
+        }
+
+        &__link:hover {
+            color: $purple;
+        }
+    }
+}

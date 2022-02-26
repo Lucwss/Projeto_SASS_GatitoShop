@@ -1,0 +1,81 @@
+/*este trecho de estilo se refere ao "Sobre Nós" do nosso blog*/
+
+
+.about {
+    font-family: arial, helvetica, sans-serif;
+    @extend %no-margin-top, %auto-margin-left, %auto-margin-right, %quadruple-margin-bottom;
+    width: 80%;
+    &__title {
+        background-color: $light-grey;
+        padding: 20px;
+        text-align: center;
+    }
+    &__h1 {
+        color: $dark-grey;
+        @include fontSize(22px);
+        letter-spacing: 1px;
+        @extend %default-margin-bottom, %no-margin-left, %no-margin-right, %half-margin-top;
+    }
+    .breadcrumb {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        &__link {
+            color: $dark-grey;
+            @include fontSize(12px);
+            text-decoration: none;
+            &:hover {
+                color: $purple;
+                text-decoration: underline;
+            }
+        }
+        &__img {
+            @extend %default-margin-bottom, %default-margin-top, %default-margin-right, %default-margin-left;
+            width: 10px;
+        }
+    }
+    &__img {
+        @extend %double-margin-bottom;
+        width: 100%;
+    }
+    &__intro {
+        color: $dark-grey;
+        @include fontSize(16px);
+        font-weight: 100;
+        @extend %triple-margin-top, %triple-margin-bottom, %auto-margin-left, %auto-margin-right;
+        text-align: center;
+        width: 70%;
+        @include for-phone-only {
+            @include fontSize(20px);
+            text-align: justify;
+            width: 100%;
+        }
+    }   
+    &__split {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        @include for-phone-only {
+            flex-wrap: wrap;
+        }
+    }
+    &__img-description {
+        width: $img-width;
+        @include for-phone-only {
+            width: 100%;
+        }       
+    }
+    &__text {
+        width: calc(100% - #{$img-width});
+    }
+    &__p {
+        color: $dark-grey;
+        @include fontSize(14px);
+        padding: 10px 20px;
+        @include for-phone-only {
+            text-align: justify;
+            @include fontSize(20px);
+            padding: 10px 0;
+        }
+    }
+}    
